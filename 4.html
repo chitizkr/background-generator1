@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>gradient generator</title>
+	<style type="text/css">
+	body {
+	font: 'Raleway', sans-serif;
+    color: rgba(0,0,0,.5);
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: .5em;
+    top: 15%;
+	background: linear-gradient(to right, red , yellow); /* Standard syntax */
+}
+
+h1 {
+    font: 600 3.5em 'Raleway', sans-serif;
+    color: rgba(0,0,0,.5);
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: .5em;
+    width: 100%;
+}
+
+h3 {
+	font: 900 1em 'Raleway', sans-serif;
+    color: rgba(0,0,0,.5);
+    text-align: center;
+    text-transform: none;
+    letter-spacing: 0.01em;
+
+}
+</style>
+</head>
+<body id="irr">
+	<h1>Background Generator</h1>
+	<input class="color1"type="color" name="color1" value="#002324">
+	<input class="color2"type="color" name="color2" value="#00ff00">
+	<h2>Current Css Background</h2>
+	<h3></h3>
+		<script type="text/javascript">
+
+			var css = document.querySelector("h3");
+			var color1=document.querySelector(".color1");
+			var color2=document.querySelector(".color2");
+			var body=document.getElementById("irr");
+
+			function linear(){
+				body.style.background = "linear-gradient(to right,"+ color1.value +","+color2.value + ")";
+
+				css.textContent = body.style.background + ";";
+
+			}
+			
+
+		color1.addEventListener("input",linear)
+
+		color2.addEventListener("input",linear)
+		</script>
+</body>
+</html>
